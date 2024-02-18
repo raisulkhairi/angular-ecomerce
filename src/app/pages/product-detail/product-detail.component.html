@@ -1,0 +1,29 @@
+<div class="mt-[110px] h-screen p-[200px] bg-[#f4f4f4]">
+    <div class="flex max-w-[1440px] mx-auto shadow-2xl p-5">
+        <div class="w-[50%]">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let item of product.images">
+                    <div class="picsum-img-wrapper h-[400px]">
+                        <img src={{item}} alt="Random first slide" class="object-cover w-auto h-full" />
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+        <div class="w-[50%] p-4">
+            <p class="text-[40px] font-normal">{{product.title}}</p>
+            <div class="flex items-center gap-2 text-[13px] mb-[40px]">
+                <p>{{product.discountPercentage}}</p>
+                <p>stock:{{product.stock}}</p>
+                <p>apple</p>
+            </div>
+            <p class="font-medium text-[48px]">${{product.price}}</p>
+            <p>description:{{product.description}}</p>
+            <div class="mt-8 flex items-center gap-4">
+                <button
+                    class="bg-[#2b4141] text-[#f5f5f5] px-[40px] py-2 text-[20px]  rounded-lg ">Checkout</button>
+                <button
+                    class="shadow px-[40px] py-2 text-[20px]  rounded-lg whitespace-nowrap ">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div>
+    <div class="w-[50%] mx-auto pt-48 pb-6  ">
+        <p class="text-[40px] mb-4">{{data?.title}}</p>
+        <img class="mb-4" src="{{data?.thumbnail}}" alt="">
+        <p>{{data?.content}}</p>
+        <div class="mt-7 bg-neutral-300 p-6 rounded-xl">
+            <h1>Comment</h1>
+            <div class="mt-5 border p-4 rounded-[20px] bg-sky-200">
+                <div class="flex gap-1 items-center mb-4 bg-orange-200 w-max p-1 rounded-lg">
+                    <img src="../../../assets/icons/user.png"  alt="profile-icon" class="h-5">
+                    <p>{{user?.firstname}} {{user?.lastname}}</p>
+                </div>
+                <p class="text-2xl">{{comment?.comment}}</p>
+            </div>
+        </div>
+    </div>
+</div>

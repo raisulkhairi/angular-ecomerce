@@ -1,0 +1,53 @@
+<div class=" text-white bg-[#2B4141] w-full p-6 flex justify-between items-center fixed top-0 z-10 gap-2">
+    <div>
+        <img src="../../../../assets/images/klipartz.com.png" alt="" class="h-[60px] object-contain">
+    </div>
+    <form (ngSubmit)="searchProduct()" class="flex items-center bg-white p-2 w-full h-full rounded-lg gap-2">
+        <mat-icon class="black-icon">search</mat-icon>
+        <input type="text" class="outline-none text-black  h-full w-full" placeholder="search product" [(ngModel)]="searchQuery" name="q">
+    </form>
+    <div class="flex gap-[9.5rem]">
+        <ul class="flex gap-3 items-center text-[#F5F5F5]">
+            <li><a class="no-underline text-[#F5F5F5]" routerLink="home" routerLinkActive="active">Home</a></li>
+            <li><a class="no-underline text-[#F5F5F5]" routerLink="/post" routerLinkActive="active">Post</a></li>
+            <li><a class="no-underline text-[#F5F5F5]" routerLink="/products" routerLinkActive="active">Product</a></li>
+
+            <li>
+                <div class="demo-section flex items-center gap-4 cursor-pointer">
+                    <mat-icon [matBadge]="messages.length" matBadgeColor="warn"
+                        [matMenuTriggerFor]="messagesIcon">email</mat-icon>
+                    <span class="cdk-visually-hidden ">
+                    </span>
+                </div>
+                <mat-menu #messagesIcon="matMenu">
+                    <button *ngFor="let message of messages" mat-menu-item>
+                        <div class="border-b pt-4 rounded-lg">
+                            <div>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <img src={{message.profile}} alt="" class="h-8 w-8 rounded-full object-cover ">
+                                    <p>{{message.author}}</p>
+                                </div>
+                                <p class="text-[13px] line-clamp-3"><span class="font-semibold">comment:</span>
+                                    {{message.message}}</p>
+                            </div>
+                            <div class="mt-5 mb-2">
+                                <p class="text-end text-xs">{{message.date}}</p>
+                            </div>
+                        </div>
+                    </button>
+                </mat-menu>
+            </li>
+        </ul>
+
+        <div class="h-9 w-9 rounded-full overflow-hidden cursor-pointer " [matMenuTriggerFor]="profile">
+            <img src="../../../../assets//images/profile.png" alt="" class="object-cover w-full h-full">
+        </div>
+
+        <mat-menu #profile="matMenu">
+            <button *ngFor="let item of menu" mat-menu-item>
+                <div (click)="item.title === 'logout' ? logout():''">{{item.title}}</div>
+            </button>
+        </mat-menu>
+
+    </div>
+</div>

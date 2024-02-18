@@ -1,0 +1,27 @@
+.selected-button {
+    background: #000 !important;
+}
+
+.color-selected {
+    ::ng-deep {
+        .mdc-evolution-chip__text-label {
+            color: white !important;
+        }
+    }
+}
+
+.color-unselected {
+    ::ng-deep {
+        .mdc-evolution-chip__text-label {
+            color: black !important;
+        }
+    }
+}
+
+.cursor {
+    ::ng-deep {
+        .mdc-evolution-chip__action--presentational {
+            @apply cursor-pointer;
+        }
+    }
+}

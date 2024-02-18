@@ -1,0 +1,31 @@
+<div class="relative h-full p-9">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div class="flex flex-col gap-2 mb-3">
+            <label for="title">Product name</label>
+            <input type="text" placeholder="Input your product name" class="outline-none border p-2"
+                formControlName="title" name="title">
+        </div>
+        <div class="flex flex-col gap-2 mb-3">
+            <label for="price">Price</label>
+            <input type="text" placeholder="Input your product price" class="outline-none border p-2"
+                formControlName="price" name="price">
+        </div>
+        <div class="flex flex-col gap-2 mb-3">
+            <label for="brand">Brand</label>
+            <input type="text" placeholder="Input your product brand" class="outline-none border p-2"
+                formControlName="brand" name="brand">
+        </div>
+        <div class="flex flex-col gap-2 mb-3">
+            <label for="description">Description</label>
+            <input type="text" placeholder="Input your product name" class="outline-none border p-2"
+                formControlName="description" name="description">
+        </div>
+        <div class="flex justify-end items-center">
+            <button [disabled]="!form.valid" type="submit" [ngClass]="!form.valid ? 'bg-slate-500':'bg-sky-700'"
+                class="py-3  px-5  rounded-lg bottom-0 right-0 text-[#f4f4f4] m-4">Submit</button>
+        </div>
+    </form>
+    <button (click)="closeDialog('this return value')"
+        class="border-spacing-0 py-2 px-4 absolute top-0 right-0"><mat-icon>close</mat-icon>
+    </button>
+</div>

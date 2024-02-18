@@ -1,0 +1,10 @@
+.black-icon {
+    color: #000;
+}
+
+
+::ng-deep {
+    .cdk-overlay-connected-position-bounding-box {
+        top: 80px !important;
+    }
+}

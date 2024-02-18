@@ -1,0 +1,32 @@
+<div class="mt-[110px]">
+    <app-category [data]="categories" (valueSelected)="productsByCategory($event)"></app-category>
+    <div class="max-w-[1440px] mx-auto flex justify-end">
+        <button class="flex items-center py-[10px] px-[15px] text-[#F2F2F2] text-base rounded-lg bg-[#2B4141]" (click)="openDialogAddProduct()">
+            <p>Add product</p>
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <div class="max-w-[1440px] mx-auto">
+        <div class="grid grid-cols-5 gap-4">
+            <div class="w-full h-[350px] p-3 shadow cursor-pointer " *ngFor="let item of products"
+                [routerLink]="['/product',item.id]">
+                <div class="h-[150px]">
+                    <img src={{item.thumbnail}} alt="" class="object-cover object-center w-full h-full mx-auto ">
+                </div>
+
+                <p class="text-[14px] mt-3 ">{{item.title}}</p>
+
+                <p class="mt-3 text-[24px] font-normal">{{item.price}}</p>
+                <div class="flex items-center gap-2">
+                    <p class="line-through">${{discount(item.price,item.discountPercentage)}}</p>
+                    <p class="text-red-500">{{item.discountPercentage}}%</p>
+                </div>
+                <div class="!flex items-center">
+                    <p>{{item.rating}}</p>
+                    <mat-icon class="text-[16px] flex items-center justify-center">star_border</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

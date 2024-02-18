@@ -1,0 +1,15 @@
+<div class=" pt-4 pb-2 max-w-[1440px] mx-auto">
+    <mat-chip-set aria-label="categories">
+        <mat-chip class="cursor"
+            [ngClass]="selected === null ? 'bg-[#2b4141] color-selected':'bg-[#f4f4f4] color-unselected'"
+            (click)="handleChip(null)">
+            All
+        </mat-chip>
+        <mat-chip 
+            class="cursor shadow-lg"
+            [ngClass]="selected === item ? 'bg-[#2b4141] color-selected':'bg-[#f4f4f4] color-unselected'"
+            *ngFor="let item of data" (click)="handleChip(item)">
+            {{item}}
+        </mat-chip>
+    </mat-chip-set>
+</div>
