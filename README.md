@@ -31,7 +31,7 @@ CRUD
 6.Detail product
 ![image](https://github.com/raisulkhairi/angular-ecomerce/assets/83000114/d15081fc-b41c-44a9-889c-e4db298b69dc)
 
-7.Message 
+7.Message
 ![image](https://github.com/raisulkhairi/angular-ecomerce/assets/83000114/4c708fb0-28a8-4422-81c6-1fbd725cefc1)
 
 8.Add product (dummy)
